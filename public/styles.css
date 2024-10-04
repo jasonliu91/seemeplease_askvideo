@@ -22,7 +22,7 @@ h1 {
 
 /* Chat container */
 .chat-container {
-    height: 600px; /* Increased height from 400px to 600px */
+    height: 600px;
     overflow-y: auto;
     background-color: #fff;
     border-radius: 10px;
@@ -54,7 +54,7 @@ h1 {
     max-width: 70%;
     margin-bottom: 10px;
     padding: 10px;
-    border-radius: 20px; /* Increased border-radius for more rounded bubbles */
+    border-radius: 20px;
     clear: both;
     position: relative;
     animation: fadeIn 0.5s;
@@ -62,16 +62,16 @@ h1 {
 }
 
 .user {
-    background-color: #DCF8C6; /* Light green */
+    background-color: #DCF8C6;
     float: right;
     text-align: left;
 }
 
 .assistant {
-    background-color: #FFFFFF; /* White background for assistant */
+    background-color: #FFFFFF;
     float: left;
     text-align: left;
-    border: 1px solid #ccc; /* Added border to distinguish assistant's messages */
+    border: 1px solid #ccc;
 }
 
 .message p {
@@ -96,11 +96,12 @@ h1 {
     display: flex;
     align-items: center;
     position: relative;
+    width: 100%;
 }
 
 #user-input {
     flex-grow: 1;
-    padding: 10px 50px 10px 15px; /* Adjust padding to accommodate the icon */
+    padding: 10px 100px 10px 15px;
     border: 1px solid #ccc;
     border-radius: 20px;
     outline: none;
@@ -113,13 +114,14 @@ h1 {
 
 .custom-file-upload {
     position: absolute;
-    right: 70px; /* Adjust this value as needed */
+    right: 60px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
     font-size: 20px;
     color: #555;
     padding: 5px;
+    transition: all 0.3s ease;
 }
 
 .custom-file-upload:hover {
@@ -131,14 +133,17 @@ h1 {
 }
 
 #send-button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 8px 15px;
     border-radius: 20px;
     cursor: pointer;
-    font-size: 16px;
-    margin-left: 10px;
+    font-size: 14px;
 }
 
 #send-button:hover {
@@ -148,6 +153,22 @@ h1 {
 #send-button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+}
+
+/* Circular progress indicator */
+.progress-ring {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+}
+
+.progress-ring__circle {
+    transition: 0.35s stroke-dashoffset;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
 }
 
 .clear-button {
@@ -184,7 +205,7 @@ h1 {
         padding: 10px;
     }
     .chat-container {
-        height: 400px; /* Adjusted for smaller screens */
+        height: 400px;
     }
 }
 
