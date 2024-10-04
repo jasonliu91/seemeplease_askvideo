@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>See Me Please</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add viewport meta tag for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include an external font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-app">
+        <h1>See Me Please</h1>
+        <div id="chat-container" class="chat-container"></div>
+        <form id="chat-form">
+            <div class="input-container">
+                <input type="text" id="user-input" placeholder="Type your message..." required autocomplete="off" autocapitalize="none">
+                <label for="file-input" class="custom-file-upload" title="Attach a file">
+                    📎
+                </label>
+                <input type="file" id="file-input" accept="video/*">
+                <button type="submit" id="send-button">Send</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-functions-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js"></script>
+
+    <!-- Your custom script -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+/* General styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+}
+
+.chat-app {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Chat container */
+.chat-container {
+    height: 600px; /* Increased height from 400px to 600px */
+    overflow-y: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+.chat-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.chat-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Messages */
+.message {
+    max-width: 70%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 20px; /* Increased border-radius for more rounded bubbles */
+    clear: both;
+    position: relative;
+    animation: fadeIn 0.5s;
+    word-wrap: break-word;
+}
+
+.user {
+    background-color: #DCF8C6; /* Light green */
+    float: right;
+    text-align: left;
+}
+
+.assistant {
+    background-color: #FFFFFF; /* White background for assistant */
+    float: left;
+    text-align: left;
+    border: 1px solid #ccc; /* Added border to distinguish assistant's messages */
+}
+
+.message p {
+    margin: 0;
+}
+
+.message-time {
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+    text-align: right;
+}
+
+/* Input area */
+#chat-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 10px 50px 10px 15px; /* Adjust padding to accommodate the icon */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    font-size: 16px;
+}
+
+#user-input:focus {
+    border-color: #4CAF50;
+}
+
+.custom-file-upload {
+    position: absolute;
+    right: 70px; /* Adjust this value as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    color: #555;
+    padding: 5px;
+}
+
+.custom-file-upload:hover {
+    color: #333;
+}
+
+#file-input {
+    display: none;
+}
+
+#send-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+#send-button:hover {
+    background-color: #45a049;
+}
+
+#send-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.clear-button {
+    background-color: #f44336;
+    margin-top: 10px;
+}
+
+.clear-button:hover {
+    background-color: #e53935;
+}
+
+/* Error message */
+.error-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+/* Typing indicator */
+.typing {
+    font-style: italic;
+    color: #999;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+    .chat-app {
+        padding: 10px;
+    }
+    .chat-container {
+        height: 400px; /* Adjusted for smaller screens */
+    }
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
