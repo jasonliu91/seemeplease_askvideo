@@ -102,7 +102,7 @@ def poll_runpod_job(job_id: str, api_key: str) -> dict:
         "Authorization": f"Bearer {api_key}"
     }
 
-    retry_delay = 30  # seconds
+    retry_delay = 5  # seconds
     max_wait_time = 540  # total wait time in seconds
     total_wait_time = 0
 

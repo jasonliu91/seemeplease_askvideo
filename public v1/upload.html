@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Upload</title>
+</head>
+<body>
+    <input type="file" id="videoInput" accept="video/*">
+    <button onclick="uploadVideo()">Upload Video</button>
+    <button onclick="callFunction()">Call Function</button>
+    <p id="result"></p>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-functions-compat.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            // Add your Firebase config here
+            apiKey: "AIzaSyAFbGIM1MhweuOwEFbNmEQFrgpwSw2uku4",
+            authDomain: "awesome-upload.firebaseapp.com",
+            projectId: "awesome-upload",
+            storageBucket: "awesome-upload.appspot.com",
+            messagingSenderId: "189600561345",
+            appId: "1:189600561345:web:73c37eb46eee211f457c40",
+            measurementId: "G-D1ZY3MJDM3"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        const storage = firebase.storage();
+        const functions = firebase.functions();
+
+        async function uploadVideo() {
+            const file = document.getElementById('videoInput').files[0];
+            if (!file) {
+                alert('Please select a video file');
+                return;
+            }
+
+            const storageRef = storage.ref('videos/' + file.name);
+            const uploadTask = storageRef.put(file);
+
+            uploadTask.on('state_changed', 
+                (snapshot) => {
+                    // Handle progress
+                },
+                (error) => {
+                    console.error('Upload failed:', error);
+                },
+                () => {
+                    console.log('Upload completed');
+                }
+            );
+        }
+
+        async function callFunction() {
+            const helloWorld = functions.httpsCallable('hello_world');
+            try {
+                const result = await helloWorld();
+                document.getElementById('result').textContent = result.data;
+            } catch (error) {
+                console.error('Function call failed:', error);
+            }
+        }
+    </script>
+</body>
+</html>

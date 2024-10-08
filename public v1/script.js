@@ -29,10 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const progressRing = document.createElement('div');
     progressRing.className = 'progress-ring';
     progressRing.innerHTML = `
-        <svg width="27" height="27" viewBox="0 0 27 27">
-            <circle class="progress-ring__background" stroke-width="3" r="11" cx="13" cy="13"/>
-            <circle class="progress-ring__progress" stroke-width="3" r="11" cx="13" cy="13"/>
-            <text class="progress-ring__text" x="13" y="13" dy=".35em">0%</text>
+        <svg width="24" height="24">
+            <circle class="progress-ring__background" stroke-width="3" r="10" cx="12" cy="12"/>
+            <circle class="progress-ring__progress" stroke-width="3" r="10" cx="12" cy="12"/>
+            <text class="progress-ring__text" x="12" y="12" dy=".35em">0%</text>
         </svg>
     `;
     fileUploadLabel.parentNode.insertBefore(progressRing, fileUploadLabel.nextSibling);

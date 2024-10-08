@@ -11,21 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="chat-app">   
-       <h1 class="title"><img src="logo.svg" alt="logo"><span>See Me Please</span></h1>
-       
+    <div class="chat-app">
+        <h1>See Me Please</h1>
         <div id="chat-container" class="chat-container"></div>
         <form id="chat-form">
             <div class="input-container">
                 <input type="text" id="user-input" placeholder="Type your message..." required autocomplete="off" autocapitalize="none">
-
+                <label for="file-input" class="custom-file-upload" title="Attach a file">
+                    📎
+                </label>
                 <input type="file" id="file-input" accept="video/*">
-                <div class="send-btn-wrapper">
-                    <label for="file-input" class="custom-file-upload" title="Attach a file">
-                        📎
-                    </label>
-                    <button type="submit" id="send-button">Send</button>
-                </div>
+                <button type="submit" id="send-button">Send</button>
             </div>
         </form>
     </div>
